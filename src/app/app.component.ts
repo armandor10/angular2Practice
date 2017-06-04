@@ -1,9 +1,8 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-//import {RouteConfig,ROUTER_DIRECTIVES, ROUTE_PROVIDERS} from '@angular/router';
+import { Component, OnInit, Injectable,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Injectable()
 export class TaskService {
-  tasks = ["First Task","Second Task","Third Task"];
+  tasks = ["First Task","Second Task","Third Task","Fourth Task"];
 }
 
 @Component({
@@ -39,6 +38,10 @@ export class TasksComponent implements OnInit{
     <button (click)="clicked()" >Click me!</button> <br><br>
     <input [(ngModel)]="sample" />
     <span> {{sample}} </span> <br><br>
+    Otro con directiva<br><br><br><br>Router<br>
+    <a routerLink="/tasks">Tasks</a><br>
+    <a routerLink="/other">Other</a>
+    <router-outlet></router-outlet> 
   `,
   styles:[ ".re {color: red}", ".blue {color:blue}" ]
   //templateUrl: './app.component.html',
@@ -58,3 +61,4 @@ export class AppComponent implements OnInit {
   }
 
 }
+
